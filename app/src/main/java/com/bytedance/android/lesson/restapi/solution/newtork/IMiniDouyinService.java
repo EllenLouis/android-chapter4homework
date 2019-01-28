@@ -18,4 +18,12 @@ import retrofit2.http.Query;
 public interface IMiniDouyinService {
     // TODO-C2 (7) Implement your MiniDouyin PostVideo Request here, url: (POST) http://10.108.10.39:8080/minidouyin/video
     // TODO-C2 (8) Implement your MiniDouyin Feed Request here, url: http://10.108.10.39:8080/minidouyin/feed
+
+    @Multipart
+    @POST("")
+    Call <PostVideoResponse > creatVideo(
+            @Query("param_name1") String param1,
+            @Query("param_name2") String param2,
+            @Part MultipartBody.Part file1,@Part MultipartBody.Part file2);
+
 }
